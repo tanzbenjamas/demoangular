@@ -29,12 +29,9 @@ public class Gender {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gender_seq")
     @Column(name = "genderId" ,unique = true, nullable = true)
     private @NonNull Long genderId;//1ไพเมรี่คี
-    private  String gender;//แอคทิิ
+    private  String gender;//แอคทิ
 
 
-   /* @OneToMany
-     @JoinColumn(name = "informationpersonId")
-    private InfromationPerson infromationPerson;*/
 
     public Long getGenderId() {
         return genderId;

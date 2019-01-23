@@ -23,6 +23,23 @@ public class Province {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "province_seq")
     @Column(name = "provinceId" ,unique = true, nullable = true)
     private @NonNull Long provinceId;//1ไพเมรี่คี
-    private  String province;//แอคทิิ
+    private  String province;//แอคทิิ 
 
+
+
+public Long getProvinceId() {
+    return provinceId;
+}
+
+public void setProvinceId(Long provinceId) {
+    this.provinceId = provinceId;
+}
+
+public String getProvince() {
+    return province;
+}
+
+public void setProvince(String province) {
+    this.province = province;
+}
 }
