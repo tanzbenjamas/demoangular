@@ -12,12 +12,15 @@ import { MatTableModule } from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { CarinformationComponent } from './carinformation/carinformation.component';
 import { AppRoutingModule } from './/app-routing.module';
-
-
+import { HttpClient } from "@angular/common/http";
+import {  ErrorHandler } from '@angular/core';
 
 import {MatCheckboxModule} from '@angular/material';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { from } from 'rxjs/observable/from';
+
+import{Controller}from'./controller/controller';
 
 const appRoutes: Routes = [
 
@@ -26,6 +29,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CarinformationComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -52,8 +56,10 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatIconModule
     
+    
   ],
-  providers: [],
+  providers: [Controller],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

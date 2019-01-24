@@ -6,6 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public
 interface CarRepository extends JpaRepository<Car, Long> {
-    Car findByCarId (String car);
+    Car findByCarId(String car);
 
 	}

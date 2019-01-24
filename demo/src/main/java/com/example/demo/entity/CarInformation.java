@@ -40,6 +40,8 @@ public class CarInformation {
     @JoinColumn(name = "provinceId")
     private Province province;
 
+ 
+
     public Long getcarInformationId() {
         return carInformationId;
     }
@@ -52,38 +54,48 @@ public class CarInformation {
     public String getName(){
         return name;
     } 
+
     public void setAddress(String name){
         this.name=name;
     }
+
     public String getAddress(){
         return address;
     } 
     public void setName(String address){
         this.address=address;
     }
+
     public String getTelephone(){
         return telephone;
     } 
+
     public void setTelephone(String telephone){
         this.telephone=telephone;
     }
+
     public Integer getAge(){
         return age;
     }
+
     public void setAge(Integer age){
         this.age=age;
     }
 
 	public void setGender(Gender g) {
+        this.gender=g;
 	}
     public void setProvice(Province p) {
+        this.province=p;
     }
    
-    public void setlicenseplate(String licenseplate) {
-	}
-
 	public void setCarbrand(Car cc2) {
+        this.car=cc2;
     }
+
+
+
+
     
    
 }

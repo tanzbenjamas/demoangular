@@ -77,21 +77,22 @@ public class CarInformationController{
         return provinceRepository.findById(proviceId).get();
     }
 
-    @PostMapping(path ="/CarInformation/{name}/{address}/{telephone}/{age}/{gender}/{province}/{carbrand}/{licenseplate}")
+    @PostMapping(path ="/CarInformation/{name}/{address}/{telephone}/{age}/{gender}/{carbrand}/{province}/{licenseplate}")
     public CarInformation newcarInformation(@PathVariable String name,
                                             @PathVariable String address,
                                             @PathVariable String telephone,
                                             @PathVariable Integer age,
                                             @PathVariable String gender,
-                                            @PathVariable String province,
                                             @PathVariable String carbrand,
+                                            @PathVariable String province,
                                             @PathVariable String licenseplate)
                                             throws ParseException {
+                                                
 
          
             CarInformation c = new CarInformation();
-            Gender g = genderRepository.findBygender(gender);
-            Province p = provinceRepository.findByprovince(province);
+            Gender g = genderRepository.findBygenderId(gender);
+            Province p = provinceRepository.findByprovinceId(province);
             Car cc = carRepository.findByCarId(carbrand);
 
             c.setName(name);
@@ -100,18 +101,14 @@ public class CarInformationController{
             c.setAge(age);
             c.setGender(g);
             c.setProvice(p);
-            
             Car cc2 = cc;
             c.setCarbrand(cc2);
-            
-            c.setlicenseplate(licenseplate);  //กรอกใส่เอา                           
             carInformationRepository.save(c);
             return c;
-            
-        }
+         }
     @DeleteMapping(path =" CarInformation/{CarInformationId}")
-            void deleteInformationpersonId(@PathVariable Long informationpersonId){
-                carInformationRepository.deleteById(informationpersonId);
+            void deleteCarInformationId(@PathVariable Long CarInformationId){
+                carInformationRepository.deleteById(CarInformationId);
 }
 }
 

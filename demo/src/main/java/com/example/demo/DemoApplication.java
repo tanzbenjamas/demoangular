@@ -27,10 +27,14 @@ public class DemoApplication {
 		
 		Car c1 = new Car();
 		c1.setCarbrand("จักราน");
+		c1.setlicenseplate("กก-99");
 		Car c2 = new Car();
 		c2.setCarbrand("สิบล้อบ้านพ่อง");
+		c2.setlicenseplate("กก-999");
 		Car c3 = new Car();
 		c3.setCarbrand("รถพ่วงก็ได้มะ");
+		c3.setlicenseplate("กก-9999");
+
 		carRepository.save(c1);
 		carRepository.save(c2);
 		carRepository.save(c3);
@@ -43,9 +47,9 @@ public class DemoApplication {
 		genderRepository.save(g1);
 		
 		Province p1 = new Province();
-		p1.setProvince("มาทำงานที่ กทม");
+		p1.setProvince("มาทำงานที่กทม");
 		Province p2 = new Province();
-		p2.setProvince("มาทำงานที่ ตจว");
+		p2.setProvince("มาทำงานที่ตจว");
 		Province p3 = new Province();
 		p3.setProvince("มาทำงานที่ โคราช");
 		Province p4 = new Province();
@@ -64,7 +68,6 @@ public class DemoApplication {
 		c.setProvice(p1);
 		c.setCarbrand(c3);
 		
-		c.setlicenseplate("กก-99"); 
 		carInformationRepository.save(c);
 		
 
